@@ -32,7 +32,7 @@ public class GUI {
     /** Konstruktor för GUI. */
     public GUI() {
         this.bankLogic = new BankLogic();
-        this.frame = new JFrame("Credit Suisse Bank Management Program");
+        this.frame = new JFrame("Bank Management Program");
         this.cardPanel = new JPanel(new CardLayout());
         this.customerList = new JList<>();
         this.accountList = new JList<>();
