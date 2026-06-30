@@ -250,16 +250,16 @@ public class AccountDAO {
 
         public AccountRecord(int accountId, String pNo,
                              AccountType accountType, BigDecimal balance) {
-            this.accountId   = accountId;
-            this.pNo         = pNo;
+            this.accountId = accountId;
+            this.pNo = pNo;
             this.accountType = accountType;
-            this.balance     = balance;
+            this.balance = balance;
         }
 
-        public int        getAccountId()   { return accountId;   }
-        public String     getpNo()         { return pNo;         }
-        public AccountType     getAccountType() { return accountType; }
-        public BigDecimal getBalance()     { return balance;     }
+        public int getAccountId() { return accountId;   }
+        public String getpNo() { return pNo;         }
+        public AccountType getAccountType() { return accountType; }
+        public BigDecimal getBalance() { return balance;     }
 
         @Override
         public String toString() {
