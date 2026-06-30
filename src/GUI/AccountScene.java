@@ -1,4 +1,4 @@
-package adasch8.GUI;
+package GUI;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -13,13 +13,12 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-import adasch8.logic.BankLogic;
-import adasch8.logic.Customer;
+import logic.BankLogic;
+import logic.Customer;
 
 /**
  * Klass som hanterar kontoscenen i det grafiska användargränssnittet.
  *
- * @author Adasch-8, Adam Schedin
  */
 public class AccountScene {
     private static final int SELECTED_INDEX_NOT_FOUND = -1;
@@ -78,7 +77,7 @@ public class AccountScene {
             return panel;
         }
         Customer customer = bankLogic.getCustomerByIndex(customerSelectedIndex);
-        accountList.setListData(customer.getCustomerAccountInfoArray());
+        accountList.setListData(bankLogic.getAccountInfoArray(customerSelectedIndex));
 
         ActionListener accountActionListener =
                 e -> {

@@ -1,11 +1,10 @@
-package adasch8.logic;
+package logic;
 
 import java.io.Serializable;
 
 /**
  * Klass för att representera en transaktion.
  *
- * @author Adasch-8, Adam Schedin
  */
 public class Transaction implements Serializable {
     private final String date;

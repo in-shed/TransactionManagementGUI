@@ -1,4 +1,4 @@
-package adasch8.GUI;
+package GUI;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -15,7 +15,6 @@ import javax.swing.JTextArea;
 /**
  * Klass som hanterar läsning och visning av transaktioner i en dialogruta.
  *
- * Author: Adasch-8, Adam Schedin
  */
 public class TransactionFileViewer {
     public static void showTransactionsInDialog(JFrame frame, String filePath) {

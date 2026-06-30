@@ -1,4 +1,4 @@
-package adasch8.GUI;
+package GUI;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -12,12 +12,11 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-import adasch8.logic.BankLogic;
+import logic.BankLogic;
 
 /**
  * Klass som hanterar kundscenen i det grafiska användargränssnittet.
  *
- * @author Adasch-8, Adam Schedin
  */
 public class CustomerScene {
     /**

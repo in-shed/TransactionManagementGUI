@@ -1,4 +1,4 @@
-package adasch8.logic;
+package logic;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -15,7 +15,6 @@ import javax.swing.JOptionPane;
 /**
  * Klass som hanterar sparande och laddande av data.
  *
- * @author Adasch-8, Adam Schedin
  */
 public class LoadSave {
     /**

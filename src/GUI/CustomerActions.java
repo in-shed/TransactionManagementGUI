@@ -1,15 +1,14 @@
-package adasch8.GUI;
+package GUI;
 
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
-import adasch8.logic.BankLogic;
+import logic.BankLogic;
 
 /**
  * Klass som hanterar kundåtgärder i det grafiska användargränssnittet gentemot banklogiken.
  *
- * @author Adasch-8, Adam Schedin
  */
 public class CustomerActions {
     private static final int SELECTED_INDEX_NOT_FOUND = -1;

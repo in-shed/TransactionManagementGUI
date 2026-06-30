@@ -1,13 +1,10 @@
-package adasch8;
-
 import javax.swing.SwingUtilities;
 
-import adasch8.GUI.GUI;
+import GUI.GUI;
 
 /**
  * Bootstrap för bankapplikationen.
  *
- * @author Adasch-8, Adam Schedin
  */
 class Main {
     /**

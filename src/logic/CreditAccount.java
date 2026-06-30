@@ -1,14 +1,15 @@
-package adasch8.logic;
+package logic;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.NumberFormat;
 import java.util.Locale;
 
+import model.AccountType;
+
 /**
  * Klass som innefattar ett kreditkonto.
  *
- * @author Adasch-8, Adam Schedin
  */
 public class CreditAccount extends Account {
 
@@ -22,8 +23,8 @@ public class CreditAccount extends Account {
      * @param balance saldo när kontot skapas
      * @param interest ränta
      */
-    CreditAccount(
-            String accountType,
+    public CreditAccount(
+            AccountType accountType,
             BigDecimal balance,
             BigDecimal interest,
             BigDecimal debtInterest,

@@ -1,11 +1,13 @@
-package adasch8.logic;
+package logic;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Klass som innefattar en kund. @Author Adasch-8, Adam Schedin */
+import model.AccountType;
+
+/** Klass som innefattar en kund. */
 public class Customer implements Serializable {
     private String name;
     private String surname;
@@ -19,13 +21,22 @@ public class Customer implements Serializable {
      * @param surname kundens efternamn
      * @param pNo kundens personnummer
      */
-    Customer(String name, String surname, String pNo) {
+    public Customer(String name, String surname, String pNo) {
         this.name = name;
         this.surname = surname;
         this.pNo = pNo;
         this.accountList = new ArrayList<>();
     }
 
+    /** Hämtar kundens förnamn.* */
+    public String getName() {
+       return this.name;
+    }
+
+    /** Hämtar kundens efternamn.* */
+    public String getSurname() {
+        return this.surname;
+    }
 
     /** Sätter kundens förnamn.
      *
@@ -92,7 +103,7 @@ public class Customer implements Serializable {
      */
     public SavingsAccount createSavingsAccount() {
         SavingsAccount newAccount =
-                new SavingsAccount("Sparkonto", BigDecimal.ZERO, new BigDecimal("2.4"));
+                new SavingsAccount(AccountType.SAVINGS, BigDecimal.ZERO, new BigDecimal("2.4"));
         accountList.add(newAccount);
         return newAccount;
     }
@@ -105,7 +116,7 @@ public class Customer implements Serializable {
     public CreditAccount createCreditAccount() {
         CreditAccount newAccount =
                 new CreditAccount(
-                        "Kreditkonto",
+                        AccountType.CREDIT,
                         BigDecimal.ZERO,
                         new BigDecimal("1.1"),
                         new BigDecimal("5"),

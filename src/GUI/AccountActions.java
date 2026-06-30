@@ -1,4 +1,4 @@
-package adasch8.GUI;
+package GUI;
 
 import java.io.File;
 import java.util.List;
@@ -9,14 +9,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-import adasch8.logic.BankLogic;
-import adasch8.logic.Customer;
-import adasch8.logic.LoadSave;
+import logic.BankLogic;
+import logic.LoadSave;
 
 /**
  * Klass som hanterar kontoåtgärder i det grafiska användargränssnittet gentemot banklogiken.
  *
- * @author Adasch-8, Adam Schedin
  */
 public class AccountActions {
 
@@ -120,7 +118,7 @@ public class AccountActions {
 
         List<String> transactions = bankLogic.getTransactions(pNo, accountId);
         JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setCurrentDirectory(new File("src/adasch8_files"));
+        fileChooser.setCurrentDirectory(new File("src/data"));
         fileChooser.setSelectedFile(new File("transaktioner.txt"));
         fileChooser.setDialogTitle("Spara transaktioner");
         fileChooser.setFileFilter(new FileNameExtensionFilter("Text files", "txt"));
@@ -211,8 +209,7 @@ public class AccountActions {
         if (customerIndex == SELECTED_INDEX_NOT_FOUND) {
             return;
         }
-        Customer customer = bankLogic.getCustomerByIndex(customerIndex);
-        accountList.setListData(customer.getCustomerAccountInfoArray());
+        accountList.setListData(bankLogic.getAccountInfoArray(customerIndex));
     }
 
     /**

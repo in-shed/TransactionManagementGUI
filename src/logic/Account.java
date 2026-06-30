@@ -1,4 +1,4 @@
-package adasch8.logic;
+package logic;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -9,14 +9,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import model.AccountType;
+
 /**
  * Abstrakt klass som innefattar ett konto.
  *
- * @author Adasch-8, Adam Schedin
  */
 public abstract class Account implements Serializable {
     private final String accountId;
-    private final String accountType;
+    private final AccountType accountType;
     private BigDecimal balance;
     private final BigDecimal interest;
     private final List<Transaction> TransactionHistory = new ArrayList<>();
@@ -30,7 +31,7 @@ public abstract class Account implements Serializable {
      * @param balance saldo
      * @param interest ränta
      */
-    Account(String accountType, BigDecimal balance, BigDecimal interest) {
+    Account(AccountType accountType, BigDecimal balance, BigDecimal interest) {
         lastAssignedId++;
         this.accountId = String.valueOf(lastAssignedId);
         this.accountType = accountType;
@@ -81,7 +82,7 @@ public abstract class Account implements Serializable {
      *
      * @return accountType kontots typ.
      */
-    public String getAccountType() {
+    public AccountType getAccountType() {
         return accountType;
     }
 

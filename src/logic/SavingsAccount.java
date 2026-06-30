@@ -1,14 +1,15 @@
-package adasch8.logic;
+package logic;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.NumberFormat;
 import java.util.Locale;
 
+import model.AccountType;
+
 /**
  * Klass som innefattar ett sparkonto.
  *
- * @author Adasch-8, Adam Schedin
  */
 public class SavingsAccount extends Account {
 
@@ -22,7 +23,7 @@ public class SavingsAccount extends Account {
      * @param balance saldo när kontot skapas
      * @param interest ränta
      */
-    SavingsAccount(String accountType, BigDecimal balance, BigDecimal interest) {
+    public SavingsAccount(AccountType accountType, BigDecimal balance, BigDecimal interest) {
         super(accountType, balance, interest);
     }
 

@@ -1,4 +1,4 @@
-package adasch8.GUI;
+package GUI;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -6,14 +6,14 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
+import java.sql.SQLException;
 
-import adasch8.logic.BankLogic;
-import adasch8.logic.LoadSave;
+import logic.BankLogic;
+import logic.LoadSave;
 
 /**
  * GUI för bankapplikationen.
  *
- * @author Adasch-8, Adam Schedin
  */
 public class GUI {
 
@@ -27,11 +27,21 @@ public class GUI {
     private final AccountScene accountScene;
 
     private final String CUSTOMER_SCENE = "customerScene";
-    private final String DEFAULT_DIRECTORY = "src/adasch8_files";
+    private final String DEFAULT_DIRECTORY = "src/Data";
 
     /** Konstruktor för GUI. */
     public GUI() {
-        this.bankLogic = new BankLogic();
+        try {
+            this.bankLogic = new BankLogic();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Could not connect to the database:\n" + e.getMessage(),
+                    "Database Error",
+                    JOptionPane.ERROR_MESSAGE
+            );
+            throw new RuntimeException(e);
+        }
         this.frame = new JFrame("Bank Management Program");
         this.cardPanel = new JPanel(new CardLayout());
         this.customerList = new JList<>();
