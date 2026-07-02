@@ -243,9 +243,9 @@ public class AccountDAO {
      */
     public static final class AccountRecord {
 
-        private final int     accountId;
-        private final String  pNo;
-        private final AccountType  accountType;
+        private final int accountId;
+        private final String pNo;
+        private final AccountType accountType;
         private final BigDecimal balance;
 
         public AccountRecord(int accountId, String pNo,

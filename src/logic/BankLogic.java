@@ -232,7 +232,7 @@ public class BankLogic implements Serializable, AutoCloseable {
         BigDecimal newBalance = acc.getBalance().subtract(amountBD);
 
         // Credit accounts may go negative, savings may not
-        if (AccountType.CREDIT == acc.getAccountType()
+        if (AccountType.SAVINGS == acc.getAccountType()
             && newBalance.compareTo(BigDecimal.ZERO) < 0) {
             return false;
         }
